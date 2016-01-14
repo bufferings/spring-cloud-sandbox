@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: turbine
+
+turbine:
+  # only demo-front1's information is shown for localhost enviroment.
+  # please refer to http://stackoverflow.com/questions/29934171/spring-cloud-turbine-unable-to-handle-multiple-clients
+  appConfig: demo-front1,demo-front2
+  cluster-name-expression: new String("default")

@@ -7,27 +7,27 @@ import org.springframework.web.client.RestTemplate;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @RestController
-public class DemoFront1Controller {
+public class DemoFront1Controller2 {
 
 	private RestTemplate restTemplate = new RestTemplate();
 
-	@RequestMapping("/demo111/")
-	@HystrixCommand(fallbackMethod = "fallback111")
-	public String getDemo111() {
+	@RequestMapping("/demo121/")
+	@HystrixCommand(fallbackMethod = "fallback121")
+	public String getDemo121() {
 		return restTemplate.getForObject("http://localhost:8081", String.class);
 	}
 
-	public String fallback111() {
-		return "fallback111";
+	public String fallback121() {
+		return "fallback121";
 	}
 
-	@RequestMapping("/demo112/")
-	@HystrixCommand(fallbackMethod = "fallback112")
-	public String getDemo112() {
+	@RequestMapping("/demo122/")
+	@HystrixCommand(fallbackMethod = "fallback122")
+	public String getDemo122() {
 		return restTemplate.getForObject("http://localhost:8082", String.class);
 	}
 
-	public String fallback112() {
-		return "fallback112";
+	public String fallback122() {
+		return "fallback122";
 	}
 }
